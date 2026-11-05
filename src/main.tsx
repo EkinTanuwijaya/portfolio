@@ -33,7 +33,7 @@ function App() {
             <div><dt>Current role</dt><dd>Fullstack Engineer</dd></div>
             <div><dt>Company</dt><dd>Samsung R&D Indonesia</dd></div>
             <div><dt>Core tools</dt><dd>React · TypeScript</dd></div>
-            <div><dt>Education</dt><dd>Computer Science, BINUS</dd></div>
+            <div><dt>Education</dt><dd>Computer Science, Bina Nusantara University</dd></div>
           </dl>
         </aside>
       </section>
@@ -60,7 +60,7 @@ function App() {
         <article className="additional-experience"><div><p className="eyebrow">ADDITIONAL EXPERIENCE</p><h3>Creative and Design</h3><p className="organization">HIMTI Bina Nusantara · January 2021 – February 2023</p></div><p>Designed Instagram story countdowns, virtual backgrounds, and NFT profiles, and contributed to event documentation.</p></article>
       </section>
       <section id="education" className="section" aria-labelledby="education-title">
-        <div className="section-heading"><p className="eyebrow">02 / EDUCATION</p><h2 id="education-title">Computer Science at BINUS</h2></div>
+        <div className="section-heading"><p className="eyebrow">02 / EDUCATION</p><h2 id="education-title">Computer Science at Bina Nusantara University</h2></div>
         <div className="education-card"><div><h3>Bachelor of Computer Science</h3><p className="organization">Bina Nusantara University, Jakarta</p><p>2020 – 2024</p></div><div className="gpa"><span>GPA</span><strong>3.94 <span>/ 4.0</span></strong></div><p className="education-detail">Studied algorithms, data structures, database systems, software development, web programming, and operating systems.</p></div>
       </section>
       <section id="skills" className="section" aria-labelledby="skills-title">

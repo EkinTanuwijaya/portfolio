@@ -8,10 +8,8 @@ test('section links have matching targets', () => {
     assert.ok(source.includes(`id="${target}"`), `Missing section: ${target}`);
   }
 });
-test('resume is a valid PDF and illustrative work is disclosed', () => {
+test('resume is a valid PDF', () => {
   const resume = new URL('../public/CV_Ekin_Tanuwijaya_2026.pdf', import.meta.url);
   assert.ok(existsSync(resume));
   assert.equal(readFileSync(resume).subarray(0, 4).toString(), '%PDF');
-  assert.ok(source.includes('not screenshots of Samsung products'));
-  assert.ok(source.includes('Numbers shown are sample data'));
 });

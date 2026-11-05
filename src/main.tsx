@@ -1,39 +1,75 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
 
-const projects = [
-  { number: '01', title: 'Making complex data feel clear.', category: 'ANALYTICS DASHBOARDS', type: 'analytics', description: 'Built analytics dashboard pages with React and TypeScript to support business insights. Maintained performance and resolved API failures, missing data, and user-reported bugs.', tags: ['React', 'TypeScript', 'Data visualization'], detail: 'My contribution included developing dashboard pages and maintaining reliable interfaces when APIs failed or data was missing. The work achieved a CQM score of 4, as reported in my CV.' },
-  { number: '02', title: 'A more thoughtful dashboard.', category: 'DASHBOARD UI V2', type: 'design', description: 'Led the dashboard UI redesign, bringing greater usability, consistency, and a more cohesive experience to a complex product.', tags: ['UI development', 'Design consistency', 'React'], detail: 'I led the Dashboard UI v2 redesign at Samsung R&D Indonesia, focusing on usability, visual consistency, and the overall user experience.' },
-  { number: '03', title: 'Less friction. More flow.', category: 'PRODUCT FEATURES', type: 'workflow', description: 'Implemented bulk updates, CSV export with a RabbitMQ-based queueing system, and AI-powered search for dashboard workflows.', tags: ['TypeScript', 'RabbitMQ', 'AI-powered search'], detail: 'I implemented frontend dashboard features for bulk updates, CSV export using a RabbitMQ-based queueing system, and AI-powered search. These are descriptions of my contributions, rather than public product demonstrations.' },
-];
-
-function Arrow({ diagonal = false }: { diagonal?: boolean }) { return <span aria-hidden="true">{diagonal ? '↗' : '↗'}</span>; }
-
-function Dashboard({ variant = 'analytics' }: { variant?: string }) {
-  return <div className={`dashboard ${variant}`} aria-hidden="true">
-    <aside className="dash-sidebar"><b>e<span>·</span></b><i className="active"/><i/><i/><i/><div/><i/></aside>
-    <div className="dash-content"><div className="dash-top"><span>Workspace <em>/ Overview</em></span><span className="avatar">ET</span></div>
-      <div className="dash-heading"><div><small>YOUR WORKSPACE, AT A GLANCE</small><h3>{variant === 'workflow' ? 'Find your next insight.' : variant === 'design' ? 'A clearer perspective.' : 'Overview'}</h3></div><span className="date-chip">This month ⌄</span></div>
-      {variant === 'workflow' ? <><div className="mock-search"><span>⌕</span> Search your data, naturally… <b>⌘ K</b></div><div className="mock-result"><span className="spark">✧</span><div><b>From a question to an insight.</b><p>A more intuitive way to explore data.</p></div></div><div className="queue-row"><span className="file-icon">↧</span><div><b>Export your workspace</b><p>CSV export · Background queue</p></div><span className="status">Ready</span></div></> : <><div className="metric-grid">{['Overview', 'Engagement', 'Performance'].map((label, i) => <div className="metric" key={label}><small>{label}</small><b>{['24,680', '86.4%', '98.2%'][i]}</b><span>↗ {['12.8', '8.2', '3.6'][i]}% <em>vs. last month</em></span></div>)}</div><div className="chart"><div className="chart-title"><b>Activity overview</b><small><i/> Activity</small></div><div className="chart-plot"><span>30k<br/>20k<br/>10k<br/>0</span><svg viewBox="0 0 480 135" preserveAspectRatio="none"><defs><linearGradient id={`fade-${variant}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#6e9f7f" stopOpacity=".28"/><stop offset="100%" stopColor="#6e9f7f" stopOpacity="0"/></linearGradient></defs><path d="M0 118 C30 112 35 70 70 85 S120 112 150 68 S205 95 235 53 S280 78 315 37 S365 62 395 26 S440 43 480 8 L480 135 L0 135Z" fill={`url(#fade-${variant})`}/><path d="M0 118 C30 112 35 70 70 85 S120 112 150 68 S205 95 235 53 S280 78 315 37 S365 62 395 26 S440 43 480 8" fill="none" stroke="#437d5c" strokeWidth="3"/></svg></div><div className="chart-months"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span></div></div></>}
-    </div>
-  </div>;
-}
-
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [expanded, setExpanded] = useState<number | null>(null);
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
-    <header className="site-header"><a className="wordmark" href="#" aria-label="Ekin, home">ekin<span>.</span></a><button className="menu-toggle" aria-expanded={menuOpen} aria-controls="navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'Close' : 'Menu'}</button><nav id="navigation" className={menuOpen ? 'open' : ''} aria-label="Main navigation"><a href="#work" onClick={() => setMenuOpen(false)}>Work</a><a href="#about" onClick={() => setMenuOpen(false)}>About</a><a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a><a className="nav-contact" href="mailto:ekin.tanuwijaya@gmail.com">Let’s talk <Arrow/></a></nav></header>
+    <header className="site-header">
+      <a className="wordmark" href="#main" aria-label="Ekin, home">ekin<span>.</span></a>
+      <button className="menu-toggle" aria-expanded={menuOpen} aria-controls="navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'Close menu' : 'Menu'}</button>
+      <nav id="navigation" className={menuOpen ? 'open' : ''} aria-label="Main navigation">
+        {['Experience', 'Education', 'Skills', 'Contact'].map(label => <a key={label} href={`#${label.toLowerCase()}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
+      </nav>
+    </header>
     <main id="main">
-      <section className="hero" aria-labelledby="hero-title"><div className="hero-copy"><p className="eyebrow"><span className="green-dot"/> FRONTEND DEVELOPER · JAKARTA, ID</p><h1 id="hero-title">Complex data.<br/><span>Simple experiences.</span></h1><p className="hero-description">Hi, I’m Ekin. I turn complex requirements into thoughtful, reliable interfaces with React and TypeScript.</p><div className="hero-actions"><a className="button primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a><a className="text-link" href="/CV_Ekin_Tanuwijaya_2026.pdf" download>Download résumé <Arrow/></a></div><div className="currently"><span className="small-icon">↳</span><span>Currently building at <strong>Samsung R&D Indonesia</strong></span></div></div><div className="hero-art"><div className="art-top"><span>CRAFTED WITH PURPOSE</span><span>REACT + TYPESCRIPT</span></div><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="hero-dashboard"><Dashboard/></div><div className="floating-tag"><span>✧</span> Built for clarity.</div><div className="art-caption"><span className="green-dot"/> INTERFACE EXPLORATION <span>001 — 2026</span></div></div></section>
-      <div className="expertise-strip"><p>Thoughtful interfaces.<br/><b>Solid foundations.</b></p><span>React</span><span>TypeScript</span><span>JavaScript</span><span>PostgreSQL</span><span>HTML & CSS</span></div>
-      <section id="work" className="work section"><div className="section-heading"><div><p className="eyebrow">01 / SELECTED WORK</p><h2>Built to make<br/><span>a difference.</span></h2></div><p>A selection of contributions at Samsung R&D Indonesia, where data meets everyday decisions.</p></div><p className="illustration-note">Interface previews are original illustrations, not screenshots of Samsung products. Numbers shown are sample data.</p><div className="projects">{projects.map((project, index) => <article className={`project project-${index}`} key={project.number}><div className="project-preview"><div className="preview-label"><span>{project.category}</span><span>{project.number} / 03</span></div><Dashboard variant={project.type}/><span className="preview-footer">INTERFACE CONCEPT · ILLUSTRATIVE PREVIEW</span></div><div className="project-info"><p className="eyebrow">SAMSUNG R&D INDONESIA</p><h3>{project.title}</h3><p>{project.description}</p><div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div><button className="project-button" aria-expanded={expanded === index} aria-controls={`project-detail-${index}`} onClick={() => setExpanded(expanded === index ? null : index)}>{expanded === index ? 'Close details' : 'My contribution'} <span aria-hidden="true">{expanded === index ? '−' : '+'}</span></button><div id={`project-detail-${index}`} hidden={expanded !== index} className="project-detail">{project.detail}</div></div></article>)}</div></section>
-      <section id="about" className="about section"><div className="about-art"><span className="eyebrow">A LITTLE ABOUT ME</span><div className="monogram">e<span>.</span></div><div className="about-art-bottom"><span>BASED IN JAKARTA<br/>BUILDING FOR PEOPLE</span><span aria-hidden="true">✳</span></div></div><div className="about-copy"><p className="eyebrow">02 / BEHIND THE INTERFACE</p><h2>A developer’s mind.<br/><span>A designer’s eye.</span></h2><p>I’m Ekin Tanuwijaya, a frontend developer and Computer Science graduate from BINUS University. I work at Samsung R&D Indonesia, building dashboards that help people make sense of complex information.</p><p>From handling missing data to redesigning an entire interface, I care about the details that make software dependable and comfortable to use. My background in creative design also shapes how I approach frontend work.</p><div className="about-facts"><div><b>3.94<span>/ 4.0</span></b><small>BINUS University · Computer Science</small></div><div><b>React <span>&</span> TS</b><small>My everyday tools</small></div></div></div></section>
-      <section id="experience" className="experience section"><div className="section-heading"><div><p className="eyebrow">03 / THE JOURNEY</p><h2>Learning. Building.<br/><span>Moving forward.</span></h2></div><a className="text-link" href="/CV_Ekin_Tanuwijaya_2026.pdf" download>Get the full résumé <Arrow/></a></div><div className="timeline"><article><time>APR 2024 — PRESENT</time><div><h3>Frontend Developer</h3><p>Samsung R&D Institute Indonesia</p><small>Analytics dashboards, product features, performance improvements, and Dashboard UI v2.</small></div><span className="timeline-badge">CURRENT</span></article><article><time>MAR 2023 — FEB 2024</time><div><h3>Frontend Developer Intern</h3><p>Samsung R&D Indonesia</p><small>React and TypeScript interfaces, PostgreSQL and AWS Athena queries, and dataset preparation.</small></div></article><article><time>JAN 2021 — FEB 2023</time><div><h3>Creative and Design</h3><p>HIMTI Bina Nusantara</p><small>Social media visuals, event documentation, virtual backgrounds, and NFT profile designs.</small></div></article><article><time>2020 — 2024</time><div><h3>Bachelor of Computer Science</h3><p>Bina Nusantara University</p><small>GPA 3.94 / 4.0 · Algorithms, data structures, databases, and software development.</small></div></article></div></section>
-      <section id="contact" className="contact"><p className="eyebrow">HAVE SOMETHING IN MIND?</p><h2>Good things start<br/>with a <span>conversation.</span></h2><a className="contact-email" href="mailto:ekin.tanuwijaya@gmail.com">ekin.tanuwijaya@gmail.com <Arrow/></a><div className="contact-bottom"><span>Jakarta, Indonesia · English & Indonesian</span><a href="https://www.linkedin.com/in/ekintanuwijaya/" target="_blank" rel="noopener noreferrer">Find me on LinkedIn <Arrow/></a></div></section>
-    </main><footer><a className="wordmark" href="#">ekin<span>.</span></a><span>© {new Date().getFullYear()} Ekin Tanuwijaya</span><a href="#main">Back to top ↑</a></footer>
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <p className="eyebrow">JAKARTA, INDONESIA</p>
+          <h1 id="hero-title">Ekin Tanuwijaya<span>Frontend Developer</span></h1>
+          <p className="hero-description">I build analytics dashboards with <strong>React and TypeScript</strong> at <strong>Samsung R&D Indonesia.</strong></p>
+          <p className="hero-support">My work spans dashboard interfaces, UI redesigns, and features that help people explore and manage data.</p>
+          <div className="hero-actions">
+            <a className="button primary" href="/CV_Ekin_Tanuwijaya_2026.pdf" download>Download résumé <span aria-hidden="true">↓</span></a>
+            <a className="button secondary" href="#experience">View experience <span aria-hidden="true">↓</span></a>
+          </div>
+          <a className="inline-link" href="https://www.linkedin.com/in/ekintanuwijaya/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+        <aside className="profile-card" aria-label="Professional overview">
+          <div className="profile-monogram" aria-hidden="true">ET<span>.</span></div>
+          <p className="card-label">AT A GLANCE</p>
+          <dl>
+            <div><dt>Current role</dt><dd>Frontend Developer</dd></div>
+            <div><dt>Company</dt><dd>Samsung R&D Indonesia</dd></div>
+            <div><dt>Core tools</dt><dd>React · TypeScript</dd></div>
+            <div><dt>Education</dt><dd>Computer Science, BINUS</dd></div>
+          </dl>
+        </aside>
+      </section>
+      <section id="experience" className="section" aria-labelledby="experience-title">
+        <div className="section-heading"><p className="eyebrow">01 / EXPERIENCE</p><h2 id="experience-title">My work at Samsung</h2><p>Two roles, from internship to frontend development.</p></div>
+        <div className="company-card">
+          <div className="company-heading"><span className="company-symbol" aria-hidden="true">S</span><div><h3>Samsung R&D Institute Indonesia</h3><p>Jakarta, Indonesia</p></div></div>
+          <article className="role" aria-labelledby="current-role">
+            <div className="role-heading"><h4 id="current-role">Frontend Developer</h4><p>April 2024 – Present</p></div>
+            <p className="role-summary">Developing and maintaining analytics dashboards with React and TypeScript.</p>
+            <p className="contributions-label">Key contributions</p>
+            <ul className="contributions">
+              <li><strong>Dashboard UI v2 redesign</strong><p>Led the redesign to improve usability, visual consistency, and the overall user experience.</p></li>
+              <li><strong>Analytics dashboard development</strong><p>Built new pages to support business insights. Maintained performance and resolved API failures, missing data, and user-reported bugs.</p></li>
+              <li><strong>Bulk updates and CSV exports</strong><p>Implemented bulk updates and CSV export functionality with a RabbitMQ-based queueing system.</p></li>
+              <li><strong>AI-powered search</strong><p>Implemented an AI-powered search feature within the dashboard.</p></li>
+            </ul>
+          </article>
+          <article className="role internship" aria-labelledby="intern-role">
+            <div className="role-heading"><h4 id="intern-role">Frontend Developer Intern</h4><p>March 2023 – February 2024</p></div>
+            <ul className="plain-list"><li>Developed dashboard interfaces using React and TypeScript.</li><li>Built PostgreSQL and AWS Athena queries for dashboard data and analysis.</li><li>Gathered and cleaned mobile phone specifications for dataset creation.</li></ul>
+          </article>
+        </div>
+        <article className="additional-experience"><div><p className="eyebrow">ADDITIONAL EXPERIENCE</p><h3>Creative and Design</h3><p className="organization">HIMTI Bina Nusantara · January 2021 – February 2023</p></div><p>Designed Instagram story countdowns, virtual backgrounds, and NFT profiles, and contributed to event documentation.</p></article>
+      </section>
+      <section id="education" className="section" aria-labelledby="education-title">
+        <div className="section-heading"><p className="eyebrow">02 / EDUCATION</p><h2 id="education-title">Computer Science at BINUS</h2></div>
+        <div className="education-card"><div><h3>Bachelor of Computer Science</h3><p className="organization">Bina Nusantara University, Jakarta</p><p>2020 – 2024</p></div><div className="gpa"><span>GPA</span><strong>3.94 <span>/ 4.0</span></strong></div><p className="education-detail">Studied algorithms, data structures, database systems, software development, web programming, and operating systems.</p></div>
+      </section>
+      <section id="skills" className="section" aria-labelledby="skills-title">
+        <div className="section-heading"><p className="eyebrow">03 / SKILLS</p><h2 id="skills-title">Tools and technologies</h2></div>
+        <div className="skills-grid"><div><h3>Frontend</h3><ul className="skill-list">{['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS'].map(skill => <li key={skill}>{skill}</li>)}</ul></div><div><h3>Data and programming</h3><ul className="skill-list">{['PostgreSQL', 'AWS Athena', 'Java'].map(skill => <li key={skill}>{skill}</li>)}</ul></div><div><h3>Languages</h3><p>Indonesian (native)<br/>English</p></div></div>
+      </section>
+      <section id="contact" className="contact" aria-labelledby="contact-title"><p className="eyebrow">04 / CONTACT</p><h2 id="contact-title">Let's get in touch.</h2><p>For opportunities or a conversation about my work, send me an email.</p><a className="contact-email" href="mailto:ekin.tanuwijaya@gmail.com">ekin.tanuwijaya@gmail.com <span aria-hidden="true">↗</span></a><div className="contact-links"><a href="https://www.linkedin.com/in/ekintanuwijaya/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="/CV_Ekin_Tanuwijaya_2026.pdf" download>Download résumé ↓</a></div></section>
+    </main>
+    <footer><span>© {new Date().getFullYear()} Ekin Tanuwijaya</span><a href="#main">Back to top ↑</a></footer>
   </>;
 }
 

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
 
@@ -17,7 +17,7 @@ function App() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">JAKARTA, INDONESIA</p>
-          <h1 id="hero-title">Ekin Tanuwijaya<span>Frontend Developer</span></h1>
+          <h1 id="hero-title">Ekin Tanuwijaya<span>Fullstack Engineer</span></h1>
           <p className="hero-description">I build analytics dashboards with <strong>React and TypeScript</strong> at <strong>Samsung R&D Indonesia.</strong></p>
           <p className="hero-support">My work spans dashboard interfaces, UI redesigns, and features that help people explore and manage data.</p>
           <div className="hero-actions">
@@ -30,7 +30,7 @@ function App() {
           <div className="profile-monogram" aria-hidden="true">ET<span>.</span></div>
           <p className="card-label">AT A GLANCE</p>
           <dl>
-            <div><dt>Current role</dt><dd>Frontend Developer</dd></div>
+            <div><dt>Current role</dt><dd>Fullstack Engineer</dd></div>
             <div><dt>Company</dt><dd>Samsung R&D Indonesia</dd></div>
             <div><dt>Core tools</dt><dd>React · TypeScript</dd></div>
             <div><dt>Education</dt><dd>Computer Science, BINUS</dd></div>
@@ -38,11 +38,11 @@ function App() {
         </aside>
       </section>
       <section id="experience" className="section" aria-labelledby="experience-title">
-        <div className="section-heading"><p className="eyebrow">01 / EXPERIENCE</p><h2 id="experience-title">My work at Samsung</h2><p>Two roles, from internship to frontend development.</p></div>
+        <div className="section-heading"><p className="eyebrow">01 / EXPERIENCE</p><h2 id="experience-title">My work at Samsung</h2><p>Two roles, from internship to fullstack engineering.</p></div>
         <div className="company-card">
           <div className="company-heading"><span className="company-symbol" aria-hidden="true">S</span><div><h3>Samsung R&D Institute Indonesia</h3><p>Jakarta, Indonesia</p></div></div>
           <article className="role" aria-labelledby="current-role">
-            <div className="role-heading"><h4 id="current-role">Frontend Developer</h4><p>April 2024 – Present</p></div>
+            <div className="role-heading"><h4 id="current-role">Fullstack Engineer</h4><p>April 2024 – Present</p></div>
             <p className="role-summary">Developing and maintaining analytics dashboards with React and TypeScript.</p>
             <p className="contributions-label">Key contributions</p>
             <ul className="contributions">

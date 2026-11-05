@@ -83,11 +83,19 @@ h4 { font-size: 21px; }
 .gpa > strong { font-size: 34px; color: var(--green); font-weight: 600; line-height: 1.5; }
 .gpa strong span { font-size: 20px; font-weight: 400; }
 .education-detail { grid-column: 1 / -1; border-top: 1px solid var(--border); padding-top: 22px; color: var(--muted); max-width: 80ch; font-size: 16px; }
-.skills-grid { display: grid; grid-template-columns: 1.2fr 1.2fr 1fr; gap: 36px; }
-.skills-grid h3 { font-size: 18px; margin-bottom: 16px; }
-.skill-list { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; gap: 9px; }
-.skill-list li { padding: 5px 12px; font-size: 16px; background: #e9eddf; border: 1px solid #ccd7bf; border-radius: 5px; }
-.skills-grid p { color: var(--muted); font-size: 16px; }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.tool-card { padding: 28px; border: 1px solid var(--border); border-radius: 10px; background: #fffefa; min-width: 0; }
+.tool-card:nth-child(2), .tool-card:nth-child(3) { background: #eef1e8; }
+.tool-card-heading { display: flex; align-items: center; gap: 14px; }
+.tool-card h3 { font-size: 20px; }
+.tool-icon { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 8px; background: #dce6d2; color: var(--green); font-family: monospace; font-size: 23px; font-weight: 600; }
+.tool-card > p { color: var(--muted); font-size: 16px; margin: 14px 0 22px; }
+.skill-list { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; gap: 10px; }
+.skill-list li { padding: 7px 13px; font-size: 16px; font-weight: 500; background: #fffefa; border: 1px solid #c5d0bc; border-radius: 6px; }
+.spoken-languages { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px 30px; border-top: 1px solid var(--border); padding-top: 24px; margin-top: 28px; }
+.spoken-languages h3 { font-size: 18px; }
+.spoken-languages p { color: var(--muted); font-size: 16px; }
+.spoken-languages p > span { margin-inline: 10px; }
 .contact { padding: 44px; margin: 12px 0 0; background: #263f33; color: #fffdf5; border-radius: 10px; }
 .contact .eyebrow { color: #d6e5b7; }
 .contact h2 { margin-bottom: 16px; }
@@ -129,7 +137,9 @@ footer { display: flex; justify-content: space-between; gap: 24px; padding: 32px
   .additional-experience { gap: 16px; }
   .education-card { padding: 24px; }
   .education-detail { grid-column: 1; }
-  .skills-grid { gap: 28px; }
+  .skills-grid { gap: 16px; }
+  .tool-card { padding: 22px; }
+  .tool-card h3 { font-size: 18px; }
   .contact { padding: 28px 22px; }
   .contact-links { flex-direction: column; align-items: flex-start; gap: 16px; }
   footer { flex-direction: column; gap: 12px; padding: 26px 0; }

@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
 
+const toolGroups = [
+  { title: 'Frontend & visualization', icon: '</>', description: 'Interfaces and interactive charts', tools: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Apache ECharts'] },
+  { title: 'Backend & messaging', icon: '↔', description: 'Programming and message queues', tools: ['Java', 'RabbitMQ'] },
+  { title: 'Data & workflows', icon: '≋', description: 'Databases, analytics, and orchestration', tools: ['PostgreSQL', 'AWS Athena', 'Apache Airflow'] },
+  { title: 'Infrastructure & caching', icon: '▦', description: 'Containers and distributed caching', tools: ['Docker', 'Hazelcast'] },
+];
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   return <>
@@ -65,7 +72,14 @@ function App() {
       </section>
       <section id="skills" className="section" aria-labelledby="skills-title">
         <div className="section-heading"><p className="eyebrow">03 / SKILLS</p><h2 id="skills-title">Tools and technologies</h2></div>
-        <div className="skills-grid"><div><h3>Frontend</h3><ul className="skill-list">{['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS'].map(skill => <li key={skill}>{skill}</li>)}</ul></div><div><h3>Data and programming</h3><ul className="skill-list">{['PostgreSQL', 'AWS Athena', 'Java'].map(skill => <li key={skill}>{skill}</li>)}</ul></div><div><h3>Languages</h3><p>Indonesian (native)<br/>English</p></div></div>
+        <div className="skills-grid">
+          {toolGroups.map(group => <article className="tool-card" key={group.title}>
+            <div className="tool-card-heading"><span className="tool-icon" aria-hidden="true">{group.icon}</span><h3>{group.title}</h3></div>
+            <p>{group.description}</p>
+            <ul className="skill-list" aria-label={group.title}>{group.tools.map(tool => <li key={tool}>{tool}</li>)}</ul>
+          </article>)}
+        </div>
+        <div className="spoken-languages"><h3>Languages I speak</h3><p>Indonesian (native) <span aria-hidden="true">·</span> English</p></div>
       </section>
       <section id="contact" className="contact" aria-labelledby="contact-title"><p className="eyebrow">04 / CONTACT</p><h2 id="contact-title">Let's get in touch.</h2><p>For opportunities or a conversation about my work, send me an email.</p><a className="contact-email" href="mailto:ekin.tanuwijaya@gmail.com">ekin.tanuwijaya@gmail.com <span aria-hidden="true">↗</span></a><div className="contact-links"><a href="https://www.linkedin.com/in/ekintanuwijaya/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="/CV_Ekin_Tanuwijaya_2026.pdf" download>Download résumé ↓</a></div></section>
     </main>

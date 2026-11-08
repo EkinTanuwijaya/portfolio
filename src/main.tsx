@@ -20,7 +20,7 @@ function App() {
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header">
-      <a className="wordmark" href="/" aria-label="Ekin, home">ekin<span>.</span></a>
+      <a className="wordmark" href="/" aria-label="Ekin, home">ekin<span>_</span></a>
       <button className="menu-toggle" aria-expanded={menuOpen} aria-controls="navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'Close menu' : 'Menu'}</button>
       <nav id="navigation" className={menuOpen ? 'open' : ''} aria-label="Main navigation">
         {[
@@ -34,30 +34,40 @@ function App() {
       {path === '/projects/financial-tracker' ? <FinancialTracker /> : isProjectsPage ? <Projects /> : isContactPage ? <Contact /> : <>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow">JAKARTA, INDONESIA</p>
-          <h1 id="hero-title">Ekin Tanuwijaya<span>Fullstack Developer</span></h1>
+          <p className="eyebrow">EKIN TANUWIJAYA <span aria-hidden="true">/</span> FULLSTACK DEVELOPER</p>
+          <h1 id="hero-title">From interface<br />to <span>infrastructure.</span></h1>
           <p className="hero-description">I build enterprise analytics platforms and backend services at <strong>Samsung R&D Institute Indonesia.</strong></p>
-          <p className="hero-support">My work spans React and TypeScript interfaces, AI-powered tools, data pipelines, and workflow automation. I collaborate across engineering teams to build maintainable software and improve application reliability.</p>
+          <p className="hero-support">React interfaces. Backend systems. AI-powered workflows. I connect the pieces that turn complex requirements into useful software.</p>
           <div className="hero-actions">
-            <a className="button primary" href="/CV_Ekin_Tanuwijaya_2026.pdf" download>Download résumé <span aria-hidden="true">↓</span></a>
-            <a className="button secondary" href="#experience">View experience <span aria-hidden="true">↓</span></a>
+            <a className="button primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a>
+            <a className="button secondary" href="/CV_Ekin_Tanuwijaya_2026.pdf" download>Download résumé <span aria-hidden="true">↓</span></a>
           </div>
-          <a className="inline-link" href="https://www.linkedin.com/in/ekintanuwijaya/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <p className="hero-location">Based in Jakarta, Indonesia</p>
         </div>
-        <aside className="profile-card" aria-label="Professional overview">
-          <div className="profile-monogram" aria-hidden="true">ET<span>.</span></div>
-          <p className="card-label">AT A GLANCE</p>
-          <dl>
-            <div><dt>Current role</dt><dd>Fullstack Developer</dd></div>
-            <div><dt>Company</dt><dd>Samsung R&D Institute Indonesia</dd></div>
-            <div><dt>Core tools</dt><dd>React · TypeScript · PostgreSQL</dd></div>
-            <div><dt>Education</dt><dd>Computer Science, Bina Nusantara University</dd></div>
-          </dl>
+        <aside className="developer-card" aria-label="Engineering focus">
+          <div className="editor-title"><span className="window-dots" aria-hidden="true"><i /><i /><i /></span><span>developer.ts</span><span className="editor-language">TS</span></div>
+          <div className="editor-code"><span className="code-comment">// A little about how I work</span><br /><span className="code-keyword">const</span> developer = {'{'}<br />
+            <span className="code-indent">name: <span className="code-string">'Ekin Tanuwijaya'</span>,</span><br />
+            <span className="code-indent">focus: [</span><br />
+            <span className="code-indent deep"><span className="code-string">'Interfaces & APIs'</span>,</span><br />
+            <span className="code-indent deep"><span className="code-string">'AI & automation'</span>,</span><br />
+            <span className="code-indent deep"><span className="code-string">'Data pipelines'</span></span><br />
+            <span className="code-indent">],</span><br />
+            <span className="code-indent">approach: <span className="code-string">'Build. Learn. Refine.'</span></span><br />
+            {'}'};
+          </div>
+          <div className="editor-footer"><span>Frontend ↔ Backend</span><a href="https://www.linkedin.com/in/ekintanuwijaya/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
         </aside>
       </section>
-      <nav className="section-links" aria-label="About sections"><span>ON THIS PAGE</span><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a></nav>
+      <div className="career-snapshot" aria-label="Career highlights">
+        <div><span className="snapshot-label">CURRENTLY BUILDING AT</span><strong>Samsung R&D Indonesia</strong></div>
+        <div><span className="snapshot-label">ENGINEERING ACROSS</span><strong>Frontend · Backend · AI</strong></div>
+        <div><span className="snapshot-label">COMPUTER SCIENCE GRADUATE</span><strong>3.94 <span>/ 4.0 GPA</span></strong></div>
+      </div>
+      <nav className="section-links" aria-label="About sections"><span>EXPLORE</span><a href="#work">Selected work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#education">Education</a></nav>
+      <div id="work"><Projects featured /></div>
       <section id="experience" className="section" aria-labelledby="experience-title">
-        <div className="section-heading"><p className="eyebrow">01 / EXPERIENCE</p><h2 id="experience-title">My work at Samsung</h2><p>Two roles, from internship to fullstack engineering.</p></div>
+        <div className="section-heading"><p className="eyebrow">02 / EXPERIENCE</p><h2 id="experience-title">Built in the<br />real world.</h2><p>From frontend intern to fullstack developer at Samsung R&D Institute Indonesia.</p><a className="inline-link" href="/CV_Ekin_Tanuwijaya_2026.pdf" download>Get the full résumé ↓</a></div>
         <div className="company-card">
           <div className="company-heading"><span className="company-symbol" aria-hidden="true">S</span><div><h3>Samsung R&D Institute Indonesia</h3><p>Jakarta, Indonesia</p></div></div>
           <article className="role" aria-labelledby="current-role">
@@ -80,11 +90,11 @@ function App() {
         </div>
       </section>
       <section id="education" className="section" aria-labelledby="education-title">
-        <div className="section-heading"><p className="eyebrow">02 / EDUCATION</p><h2 id="education-title">Computer Science at Bina Nusantara University</h2></div>
+        <div className="section-heading"><p className="eyebrow">03 / EDUCATION</p><h2 id="education-title">A strong foundation.</h2></div>
         <div className="education-card"><div><h3>Bachelor of Computer Science</h3><p className="organization">Bina Nusantara University, Jakarta</p><p>2020 – 2024</p></div><div className="gpa"><span>GPA</span><strong>3.94 <span>/ 4.0</span></strong></div><p className="education-detail">Studied algorithms, data structures, database systems, software development, web programming, and operating systems.</p></div>
       </section>
       <section id="skills" className="section" aria-labelledby="skills-title">
-        <div className="section-heading"><p className="eyebrow">03 / SKILLS</p><h2 id="skills-title">Tools and technologies</h2></div>
+        <div className="section-heading"><p className="eyebrow">04 / TOOLKIT</p><h2 id="skills-title">The tools behind the work.</h2><p>From the first interaction to the data behind it.</p></div>
         <div className="skills-grid">
           {toolGroups.map(group => <article className="tool-card" key={group.title}>
             <div className="tool-card-heading"><span className="tool-icon" aria-hidden="true">{group.icon}</span><h3>{group.title}</h3></div>
@@ -94,7 +104,7 @@ function App() {
         </div>
         <div className="spoken-languages"><h3>Languages I speak</h3><p>Indonesian (native) <span aria-hidden="true">·</span> English</p></div>
       </section>
-
+      <Contact compact />
       </>}
     </main>
     <footer><span>© {new Date().getFullYear()} Ekin Tanuwijaya</span><a href="#main">Back to top ↑</a></footer>

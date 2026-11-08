@@ -1,17 +1,19 @@
-export default function Projects() {
-  return <section className="projects-page" aria-labelledby="projects-title">
-    <div className="page-intro"><p className="eyebrow">SELECTED WORK</p><h1 id="projects-title">Personal projects</h1><p>Things I build to turn everyday problems into useful tools.</p></div>
+export default function Projects({ featured = false }: { featured?: boolean }) {
+  return <section className={featured ? 'section featured-projects' : 'projects-page'} aria-labelledby="projects-title">
+    <div className="page-intro"><p className="eyebrow">{featured ? '01 / SELECTED WORK' : 'SELECTED WORK'}</p>{featured ? <h2 id="projects-title">An idea. An entire stack.</h2> : <h1 id="projects-title">Personal projects</h1>}<p>Things I build to turn everyday problems into useful tools.</p></div>
     <div className="projects-grid">
       <article className="project-card" aria-labelledby="finance-title">
         <a className="gallery-preview" href="/projects/financial-tracker/" aria-label="Explore Financial Tracker">
-          <img src="/projects/financial-tracker-dashboard.png" width="1440" height="1120" alt="Financial Tracker dashboard mockup showing balances, spending charts, and wallets." />
+          <img src="/projects/financial-tracker-dashboard.png" width="1440" height="1120" loading="lazy" alt="Financial Tracker dashboard mockup showing balances, spending charts, and wallets." />
+          <span className="preview-caption">Dashboard mockup · Fictional sample data</span>
         </a>
         <div className="project-body">
-          <p className="eyebrow">PERSONAL FINANCE / WEB APP</p>
+          <p className="eyebrow">FULLSTACK APPLICATION</p>
           <h2 id="finance-title" className="gallery-title"><a href="/projects/financial-tracker/">Financial Tracker</a></h2>
           <p className="project-description">Track wallets, income, and expenses in one dashboard, with a Telegram bot for capturing transactions on the go.</p>
+          <dl className="project-facts"><div><dt>The problem</dt><dd>Everyday transactions scattered across wallets.</dd></div><div><dt>The approach</dt><dd>A unified dashboard with transaction entry through Telegram.</dd></div></dl>
           <ul className="skill-list project-stack" aria-label="Main technologies"><li>Next.js</li><li>NestJS</li><li>PostgreSQL</li></ul>
-          <a className="inline-link project-detail-link" href="/projects/financial-tracker/">Explore project <span aria-hidden="true">&rarr;</span></a>
+          <a className="inline-link project-detail-link" href="/projects/financial-tracker/">Explore the project <span aria-hidden="true">↗</span></a>
         </div>
       </article>
     </div>

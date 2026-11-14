@@ -4,7 +4,7 @@ React, TypeScript, Vite, and plain CSS. Content and the downloadable resume are 
 
 Navigation uses three pages: About (`/`), Projects (`/projects/`), and Contact (`/contact/`). Experience, education, and skills remain section links within About. The project gallery links to individual detail pages, starting with Financial Tracker at `/projects/financial-tracker/`.
 
-Financial Tracker includes a static dashboard mockup, fictional sample data, and a usage guide based on its local source. The editable mockup is `public/projects/financial-tracker-dashboard.html`; its screenshot is `public/projects/financial-tracker-dashboard.png` (1440 x 1120). No finance backend is required. Vite builds all page entries so direct links work on static hosting.
+Financial Tracker links to the live VPS-hosted app at https://financetrackerfree.duckdns.org from its gallery card and detail page. Project details cover AI receipt processing, PDF reports, authentication, Telegram pairing, and Docker/GitHub Actions deployment, based on its local source. The portfolio preview remains a static dashboard mockup with fictional sample data: `public/projects/financial-tracker-dashboard.html` and its screenshot, `public/projects/financial-tracker-dashboard.png` (1440 x 1120). No finance backend is required to run the portfolio. Vite builds all page entries so direct links work on static hosting.
 
 ## Development
 

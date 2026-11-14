@@ -89,6 +89,7 @@ h2 { font-size: clamp(27px, 2.8vw, 36px); letter-spacing: -1px; margin-top: 12px
 .project-preview figcaption a { color: var(--accent); }
 .project-body { padding: 32px; }
 .project-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.project-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .projects-page { padding: 64px 0 24px; }
 .page-intro { margin-bottom: 40px; }
 .page-intro h1 { margin-bottom: 16px; }

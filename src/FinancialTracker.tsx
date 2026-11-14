@@ -8,9 +8,9 @@ export default function FinancialTracker() {
         <article className="project-card" aria-labelledby="finance-title">
           <figure className="project-preview">
             <a href="/projects/financial-tracker-dashboard.png" target="_blank" rel="noopener noreferrer" aria-label="Open Financial Tracker dashboard screenshot at full size">
-              <img src="/projects/financial-tracker-dashboard.png" width="1440" height="1120" loading="lazy" alt="Financial Tracker dashboard mockup with rupiah balances, income and expenses, spending categories, recent transactions, and three wallets." />
+              <img src="/projects/financial-tracker-dashboard.png" width="1440" height="1629" loading="lazy" alt="Actual Financial Tracker dashboard rendered from the app source, with fictional balances, spending charts, transactions, and wallets." />
             </a>
-            <figcaption>Dashboard mockup · Fictional sample data <a href="/projects/financial-tracker-dashboard.png" target="_blank" rel="noopener noreferrer">View full screenshot ↗</a></figcaption>
+            <figcaption>Actual app UI · Fictional sample data <a href="/projects/financial-tracker-dashboard.png" target="_blank" rel="noopener noreferrer">View full screenshot ↗</a></figcaption>
           </figure>
           <div className="project-body">
             <div className="project-heading"><div><p className="eyebrow">PERSONAL PROJECT · LIVE ON VPS</p><h2 id="finance-title">Your money, at a glance</h2></div><div className="project-actions"><a className="button primary" href="https://financetrackerfree.duckdns.org" target="_blank" rel="noopener noreferrer">Open live app <span aria-hidden="true">↗</span></a><a className="button secondary" href="https://github.com/EkinTanuwijaya/financial-tracker" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a></div></div>

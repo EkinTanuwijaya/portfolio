@@ -1,3 +1,5 @@
+import FinanceFeatureMockups from './FinanceFeatureMockups';
+
 export default function FinancialTracker() {
   return (
       <section className="projects-page" aria-labelledby="project-title">
@@ -14,6 +16,7 @@ export default function FinancialTracker() {
             <div className="project-heading"><div><p className="eyebrow">PERSONAL PROJECT · LIVE ON VPS</p><h2 id="finance-title">Your money, at a glance</h2></div><div className="project-actions"><a className="button primary" href="https://financetrackerfree.duckdns.org" target="_blank" rel="noopener noreferrer">Open live app <span aria-hidden="true">↗</span></a><a className="button secondary" href="https://github.com/EkinTanuwijaya/financial-tracker" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a></div></div>
             <p className="project-description">A personal finance app that brings wallets, income, expenses, and reports into one place. Record transactions in the dashboard or through Telegram, extract receipt details with PaddleOCR and AI, and review spending with charts and PDF reports.</p>
             <ul className="skill-list project-stack" aria-label="Financial Tracker technologies">{['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'NestJS', 'PostgreSQL', 'Prisma', 'Redis', 'Telegram Bot', 'PaddleOCR', 'Docker', 'Nginx', 'GitHub Actions'].map(tool => <li key={tool}>{tool}</li>)}</ul>
+            <FinanceFeatureMockups />
             <div className="project-guide">
               <h3>What I built</h3>
               <dl className="project-facts">

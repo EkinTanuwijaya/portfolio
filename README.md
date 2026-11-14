@@ -6,6 +6,8 @@ Navigation uses three pages: About (`/`), Projects (`/projects/`), and Contact (
 
 Financial Tracker links to the live VPS-hosted app at https://financetrackerfree.duckdns.org from its gallery card and detail page. Project details cover AI receipt processing, PDF reports, authentication, Telegram pairing, and Docker/GitHub Actions deployment, based on its local source. The portfolio preview remains a static dashboard mockup with fictional sample data: `public/projects/financial-tracker-dashboard.html` and its screenshot, `public/projects/financial-tracker-dashboard.png` (1440 x 1120). No finance backend is required to run the portfolio. Vite builds all page entries so direct links work on static hosting.
 
+The Financial Tracker detail page also includes four responsive feature mockups in `src/FinanceFeatureMockups.tsx`: transaction history, wallet balances, spending reports, and Telegram receipt review. These are illustrative previews with fictional data, not live account views.
+
 ## Development
 
 ```sh

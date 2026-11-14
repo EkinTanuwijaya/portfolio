@@ -6,17 +6,11 @@ export default function FinancialTracker() {
         <a className="inline-link back-link" href="/projects/">&larr; All projects</a>
         <div className="page-intro"><p className="eyebrow">PERSONAL PROJECT</p><h1 id="project-title">Financial Tracker</h1><p>A little more financial clarity, from a dashboard or a Telegram chat.</p></div>
         <article className="project-card" aria-labelledby="finance-title">
-          <figure className="project-preview">
-            <a href="/projects/financial-tracker-dashboard.png" target="_blank" rel="noopener noreferrer" aria-label="Open Financial Tracker dashboard screenshot at full size">
-              <img src="/projects/financial-tracker-dashboard.png" width="1440" height="1629" loading="lazy" alt="Actual Financial Tracker dashboard rendered from the app source, with fictional balances, spending charts, transactions, and wallets." />
-            </a>
-            <figcaption>Actual app UI · Fictional sample data <a href="/projects/financial-tracker-dashboard.png" target="_blank" rel="noopener noreferrer">View full screenshot ↗</a></figcaption>
-          </figure>
+          <FinanceFeatureMockups />
           <div className="project-body">
             <div className="project-heading"><div><p className="eyebrow">PERSONAL PROJECT · LIVE ON VPS</p><h2 id="finance-title">Your money, at a glance</h2></div><div className="project-actions"><a className="button primary" href="https://financetrackerfree.duckdns.org" target="_blank" rel="noopener noreferrer">Open live app <span aria-hidden="true">↗</span></a><a className="button secondary" href="https://github.com/EkinTanuwijaya/financial-tracker" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a></div></div>
             <p className="project-description">A personal finance app that brings wallets, income, expenses, and reports into one place. Record transactions in the dashboard or through Telegram, extract receipt details with PaddleOCR and AI, and review spending with charts and PDF reports.</p>
             <ul className="skill-list project-stack" aria-label="Financial Tracker technologies">{['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'NestJS', 'PostgreSQL', 'Prisma', 'Redis', 'Telegram Bot', 'PaddleOCR', 'Docker', 'Nginx', 'GitHub Actions'].map(tool => <li key={tool}>{tool}</li>)}</ul>
-            <FinanceFeatureMockups />
             <div className="project-guide">
               <h3>What I built</h3>
               <dl className="project-facts">

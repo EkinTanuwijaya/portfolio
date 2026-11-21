@@ -15,7 +15,7 @@ test('resume is a valid PDF', () => {
 });
 
 test('internal page and asset links have static destinations', () => {
-  for (const file of ['main', 'Projects', 'FinancialTracker', 'Contact']) {
+  for (const file of ['main', 'Projects', 'FinancialTracker', 'HomeWorkout', 'Contact']) {
     const content = readFileSync(new URL(`../src/${file}.tsx`, import.meta.url), 'utf8');
     for (const [, href] of content.matchAll(/(?:href=|href: )['"](\/[^'"#]*)['"]/g)) {
       const destination = href.endsWith('/') ? `${href}index.html` : `/public${href}`;

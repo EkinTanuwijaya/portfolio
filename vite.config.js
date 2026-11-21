@@ -8,6 +8,7 @@ export default defineConfig({
         home: fileURLToPath(new URL('./index.html', import.meta.url)),
         projects: fileURLToPath(new URL('./projects/index.html', import.meta.url)),
         financialTracker: fileURLToPath(new URL('./projects/financial-tracker/index.html', import.meta.url)),
+        homeWorkout: fileURLToPath(new URL('./projects/home-workout/index.html', import.meta.url)),
         contact: fileURLToPath(new URL('./contact/index.html', import.meta.url)),
       },
     },

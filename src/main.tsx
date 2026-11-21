@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './style.css';
 import Projects from './Projects';
 import FinancialTracker from './FinancialTracker';
+import HomeWorkout from './HomeWorkout';
 import Contact from './Contact';
 
 const toolGroups = [
@@ -15,7 +16,7 @@ const toolGroups = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const path = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\/$/, '');
-  const isProjectsPage = path === '/projects' || path === '/projects/financial-tracker';
+  const isProjectsPage = path === '/projects' || path === '/projects/financial-tracker' || path === '/projects/home-workout';
   const isContactPage = path === '/contact';
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
@@ -31,7 +32,7 @@ function App() {
       </nav>
     </header>
     <main id="main">
-      {path === '/projects/financial-tracker' ? <FinancialTracker /> : isProjectsPage ? <Projects /> : isContactPage ? <Contact /> : <>
+      {path === '/projects/financial-tracker' ? <FinancialTracker /> : path === '/projects/home-workout' ? <HomeWorkout /> : isProjectsPage ? <Projects /> : isContactPage ? <Contact /> : <>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">EKIN TANUWIJAYA <span aria-hidden="true">/</span> FULLSTACK DEVELOPER</p>

@@ -10,6 +10,8 @@ The Financial Tracker detail page displays all five screenshots in one carousel 
 
 ## Development
 
+Home Workout Menu Builder is featured on About and Projects, with a detail page at `/projects/home-workout/`. Its equipment-aware generator, SVG movement guides, routine editing, browser-local saving, and rest timer are documented from `D:/Belajar/Home-Workout`. Source: https://github.com/EkinTanuwijaya/workout. The screenshot at `public/projects/home-workout.png` was captured from the project's existing production build at a 1440 × 1800 viewport; refresh it by serving that project's current build and capturing the app. Edit its detail content in `src/HomeWorkout.tsx`.
+
 ```sh
 npm install
 npm run dev
